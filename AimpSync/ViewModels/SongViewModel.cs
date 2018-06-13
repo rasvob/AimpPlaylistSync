@@ -6,17 +6,19 @@ namespace AimpSync.ViewModels
     public class SongViewModel: IViewModelMapper<SongModel>
     {
         public string Name { get; set; }
+        public string  FileName { get; set; }
         public int Length { get; set; }
         public int Size { get; set; }
-        public string Sha256 { get; set; }
+        public string Hash { get; set; }
         public int Id { get; set; }
 
         public void MapFromModel(SongModel model)
         {
             Length = model.Length;
             Size = model.Size;
-            Sha256 = model.Sha256;
+            Hash = model.Hash;
             Id = model.Id;
+            FileName = Path.GetFileName(model.Path);
 
             if (model.Artist != string.Empty && model.Name != string.Empty)
             {
@@ -34,7 +36,7 @@ namespace AimpSync.ViewModels
             {
                 Id = Id,
                 Name = Name,
-                Sha256 = Sha256,
+                Hash = Hash,
                 Length = Length,
                 Size = Size,
             };
