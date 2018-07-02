@@ -33,7 +33,7 @@ namespace AimpSync
             var host = WebHost.CreateDefaultBuilder(args)
                 .UseContentRoot(pathToContentRoot)
                 .UseStartup<Startup>()
-                //.UseUrls("http://192.168.2.7:40141")
+                .UseUrls("http://192.168.2.7:40141")
                 .Build();
 
             if (isService)
