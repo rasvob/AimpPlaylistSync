@@ -1,0 +1,4 @@
+﻿Publish to folder, ex. C:\svc with .Net Framework 4.7+ and Win7x86 runtime
+Run as admin:
+sc create AimpSync binPath= "c:\svc\AimpSync.exe"
+sc start AimpSync
